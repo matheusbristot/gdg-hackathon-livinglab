@@ -21,6 +21,7 @@ android {
         versionCode rootProject.ext.version_code
         versionName rootProject.ext.version_name
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
 
     dataBinding {
@@ -55,9 +56,8 @@ dependencies {
     implementation "org.koin:koin-android-architecture:$koin_version"
     implementation "org.koin:koin-android:$koin_version"
 
-    //RxJava
-    implementation "io.reactivex.rxjava2:rxjava:$rx_java_version"
-    implementation "io.reactivex.rxjava2:rxkotlin:$rx_kotlin_version"
+    // Multidex
+    implementation 'com.android.support:multidex:1.0.3'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
