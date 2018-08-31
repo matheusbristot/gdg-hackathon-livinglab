@@ -1,4 +1,4 @@
-package com.shittyapp.data.util.rx
+package com.shittyapp.fuckyou.util.rx
 
 import com.shittyapp.domain.di.SchedulerProvider
 import io.reactivex.android.schedulers.AndroidSchedulers

@@ -1,7 +1,12 @@
 package com.shittyapp.fuckyou.di
 
-import com.shittyapp.data.util.rx.DefaultSchedulerProvider
+import android.content.Context
+import com.shittyapp.fuckyou.util.rx.DefaultSchedulerProvider
 import com.shittyapp.domain.di.SchedulerProvider
+import com.shittyapp.fuckyou.repository.DefaultFirebaseAppRepository
+import com.shittyapp.fuckyou.repository.DefaultFirebaseAuthRepository
+import com.shittyapp.fuckyou.repository.FirebaseAppRepository
+import com.shittyapp.fuckyou.repository.FirebaseAuthRepository
 import com.shittyapp.fuckyou.user.login.LoginViewModel
 import org.koin.android.architecture.ext.viewModel
 import org.koin.dsl.module.applicationContext
@@ -12,8 +17,18 @@ val rxModule = applicationContext {
 
 val viewModule = applicationContext {
     viewModel {
-        LoginViewModel(get())
+        LoginViewModel(get(), get())
     }
 }
 
-val fuckYouAppModules = listOf(rxModule, viewModule)
+val firebaseDependencies = applicationContext {
+    bean {
+        DefaultFirebaseAppRepository(get() as Context) as FirebaseAppRepository
+    }
+
+    bean {
+        DefaultFirebaseAuthRepository(get(), get()) as FirebaseAuthRepository
+    }
+}
+
+val fuckYouAppModules = listOf(rxModule, viewModule, firebaseDependencies)

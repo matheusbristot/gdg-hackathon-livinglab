@@ -33,6 +33,16 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+
+        staging {
+            applicationIdSuffix ".staging"
+            resValue "string", "app_name", "\"Fuck You [staging]\""
+        }
+
+        debug {
+            applicationIdSuffix ".debug"
+            resValue "string", "app_name", "\"Fuck You [debug]\""
+        }
     }
 }
 
@@ -43,7 +53,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':domain')
     implementation project(':data')
-    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation "com.android.support:appcompat-v7:$support_version"
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
 
@@ -59,7 +69,18 @@ dependencies {
     // Multidex
     implementation 'com.android.support:multidex:1.0.3'
 
+    //RxAndroid
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
+
+    // Firebase
+    implementation 'com.google.firebase:firebase-core:16.0.3'
+    implementation 'com.google.firebase:firebase-crash:16.2.0'
+    implementation 'com.google.firebase:firebase-auth:16.0.3'
+    implementation 'com.google.firebase:firebase-database:16.0.1'
+
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
+
+apply plugin: 'com.google.gms.google-services'
