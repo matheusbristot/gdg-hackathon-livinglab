@@ -1,27 +1,27 @@
 {
   "project_info": {
-    "project_number": "413662076241",
-    "firebase_url": "https://fuckyou-android.firebaseio.com",
-    "project_id": "fuckyou-android",
-    "storage_bucket": "fuckyou-android.appspot.com"
+    "project_number": "483650318380",
+    "firebase_url": "https://hackaton-notice.firebaseio.com",
+    "project_id": "hackaton-notice",
+    "storage_bucket": "hackaton-notice.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:413662076241:android:c05018084d51c656",
+        "mobilesdk_app_id": "1:483650318380:android:5de842a753bf3a9a",
         "android_client_info": {
-          "package_name": "com.shittyapp.fuckyou"
+          "package_name": "com.hackaton.notice"
         }
       },
       "oauth_client": [
         {
-          "client_id": "413662076241-01dnah5imh8rd18md3qikgq5c569gddr.apps.googleusercontent.com",
+          "client_id": "483650318380-sv6bakne0oqago68utqqk5rcbrl7hh5j.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyA-I0AE14TuGgovFHYJcWYmx_Eu4vRAZgE"
+          "current_key": "AIzaSyBQDG5ptx32lLFWyWGwkSnU3lJqkXvvBh4"
         }
       ],
       "services": {
@@ -39,28 +39,20 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:413662076241:android:162f3ab473337b67",
+        "mobilesdk_app_id": "1:483650318380:android:507d3cf257d80f6d",
         "android_client_info": {
-          "package_name": "com.shittyapp.fuckyou.debug"
+          "package_name": "com.hackaton.notice.debug"
         }
       },
       "oauth_client": [
         {
-          "client_id": "413662076241-pl96j67fcopf7np7melhmc5bav28f6jt.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.shittyapp.fuckyou.debug",
-            "certificate_hash": "f24b513a2fe5332e1fc10e93fe9b31d3ba3c2a0e"
-          }
-        },
-        {
-          "client_id": "413662076241-01dnah5imh8rd18md3qikgq5c569gddr.apps.googleusercontent.com",
+          "client_id": "483650318380-sv6bakne0oqago68utqqk5rcbrl7hh5j.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyA-I0AE14TuGgovFHYJcWYmx_Eu4vRAZgE"
+          "current_key": "AIzaSyBQDG5ptx32lLFWyWGwkSnU3lJqkXvvBh4"
         }
       ],
       "services": {
@@ -68,13 +60,8 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 2,
-          "other_platform_oauth_client": [
-            {
-              "client_id": "413662076241-01dnah5imh8rd18md3qikgq5c569gddr.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "status": 1,
+          "other_platform_oauth_client": []
         },
         "ads_service": {
           "status": 2
@@ -83,20 +70,20 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:413662076241:android:b60565fb61e5ec6d",
+        "mobilesdk_app_id": "1:483650318380:android:8c55e67a3c835709",
         "android_client_info": {
-          "package_name": "com.shittyapp.fuckyou.staging"
+          "package_name": "com.hackaton.notice.staging"
         }
       },
       "oauth_client": [
         {
-          "client_id": "413662076241-01dnah5imh8rd18md3qikgq5c569gddr.apps.googleusercontent.com",
+          "client_id": "483650318380-sv6bakne0oqago68utqqk5rcbrl7hh5j.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyA-I0AE14TuGgovFHYJcWYmx_Eu4vRAZgE"
+          "current_key": "AIzaSyBQDG5ptx32lLFWyWGwkSnU3lJqkXvvBh4"
         }
       ],
       "services": {

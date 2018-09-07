@@ -15,7 +15,7 @@ android {
     compileSdkVersion rootProject.ext.target_version
     buildToolsVersion rootProject.ext.build_version
     defaultConfig {
-        applicationId "com.shittyapp.fuckyou"
+        applicationId "com.hackaton.notice"
         minSdkVersion rootProject.ext.min_sdk_version
         targetSdkVersion rootProject.ext.target_version
         versionCode rootProject.ext.version_code
@@ -36,12 +36,12 @@ android {
 
         staging {
             applicationIdSuffix ".staging"
-            resValue "string", "app_name", "\"Fuck You [staging]\""
+            resValue "string", "app_name", "\"Hackaton Notice [staging]\""
         }
 
         debug {
             applicationIdSuffix ".debug"
-            resValue "string", "app_name", "\"Fuck You [debug]\""
+            resValue "string", "app_name", "\"Hackaton Notice [debug]\""
         }
     }
 }

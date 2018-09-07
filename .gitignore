@@ -1,3 +1,5 @@
+# Created by https://www.gitignore.io/api/macos,linux,android,windows,intellij,intellij+all,intellij+iml,androidstudio
+
 ### Android ###
 # Built application files
 *.apk
@@ -13,6 +15,7 @@
 bin/
 gen/
 out/
+app/release/output.json
 
 # Gradle files
 .gradle/
@@ -40,6 +43,7 @@ captures/
 .idea/gradle.xml
 .idea/dictionaries
 .idea/libraries
+.idea/*
 
 # External native build folder generated in Android Studio 2.2 and later
 .externalNativeBuild
@@ -342,3 +346,6 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+
+# End of https://www.gitignore.io/api/macos,linux,android,windows,intellij,intellij+all,intellij+iml,androidstudio
