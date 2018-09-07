@@ -24,6 +24,16 @@ android {
         multiDexEnabled true
     }
 
+    signingConfigs {
+        release {
+            keyAlias 'notice'
+            keyPassword '*UTZ%5v.,Dp)^53jtF#*Nfjq,v'
+            storeFile file('../keystore/keystore.jks')
+            storePassword '*UTZ%5v.,Dp)^53jtF#*Nfjq,v'
+        }
+    }
+
+
     dataBinding {
         enabled = true
     }
@@ -31,7 +41,9 @@ android {
     buildTypes {
         release {
             minifyEnabled false
+            initWith(buildTypes.release)
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            resValue "string", "app_name", "\"Hackaton Notice\""
         }
 
         staging {
@@ -71,6 +83,7 @@ dependencies {
     // Firebase
     implementation 'com.google.firebase:firebase-core:16.0.3'
     implementation 'com.google.firebase:firebase-crash:16.2.0'
+    implementation 'com.crashlytics.sdk.android:crashlytics:2.9.5'
 
 
     testImplementation 'junit:junit:4.12'
