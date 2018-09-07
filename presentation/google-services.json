@@ -1,0 +1,117 @@
+{
+  "project_info": {
+    "project_number": "413662076241",
+    "firebase_url": "https://fuckyou-android.firebaseio.com",
+    "project_id": "fuckyou-android",
+    "storage_bucket": "fuckyou-android.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:413662076241:android:c05018084d51c656",
+        "android_client_info": {
+          "package_name": "com.shittyapp.fuckyou"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "413662076241-01dnah5imh8rd18md3qikgq5c569gddr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-I0AE14TuGgovFHYJcWYmx_Eu4vRAZgE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:413662076241:android:162f3ab473337b67",
+        "android_client_info": {
+          "package_name": "com.shittyapp.fuckyou.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "413662076241-pl96j67fcopf7np7melhmc5bav28f6jt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.shittyapp.fuckyou.debug",
+            "certificate_hash": "f24b513a2fe5332e1fc10e93fe9b31d3ba3c2a0e"
+          }
+        },
+        {
+          "client_id": "413662076241-01dnah5imh8rd18md3qikgq5c569gddr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-I0AE14TuGgovFHYJcWYmx_Eu4vRAZgE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "413662076241-01dnah5imh8rd18md3qikgq5c569gddr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:413662076241:android:b60565fb61e5ec6d",
+        "android_client_info": {
+          "package_name": "com.shittyapp.fuckyou.staging"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "413662076241-01dnah5imh8rd18md3qikgq5c569gddr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-I0AE14TuGgovFHYJcWYmx_Eu4vRAZgE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
