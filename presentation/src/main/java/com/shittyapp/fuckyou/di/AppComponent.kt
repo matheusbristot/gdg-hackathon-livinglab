@@ -1,13 +1,14 @@
 package com.shittyapp.fuckyou.di
 
 import android.content.Context
-import com.shittyapp.fuckyou.util.rx.DefaultSchedulerProvider
+import com.shittyapp.data.di.RepositoryComponents
 import com.shittyapp.domain.di.SchedulerProvider
-import com.shittyapp.fuckyou.repository.DefaultFirebaseAppRepository
-import com.shittyapp.fuckyou.repository.DefaultFirebaseAuthRepository
-import com.shittyapp.fuckyou.repository.FirebaseAppRepository
-import com.shittyapp.fuckyou.repository.FirebaseAuthRepository
+import com.shittyapp.fuckyou.firebase.DefaultFirebaseApp
+import com.shittyapp.fuckyou.firebase.DefaultInternalFirebaseAuth
+import com.shittyapp.fuckyou.firebase.InternalFirebaseApp
+import com.shittyapp.fuckyou.firebase.InternalFirebaseAuth
 import com.shittyapp.fuckyou.user.login.LoginViewModel
+import com.shittyapp.fuckyou.util.rx.DefaultSchedulerProvider
 import org.koin.android.architecture.ext.viewModel
 import org.koin.dsl.module.applicationContext
 
@@ -17,18 +18,18 @@ val rxModule = applicationContext {
 
 val viewModule = applicationContext {
     viewModel {
-        LoginViewModel(get(), get())
+        LoginViewModel(get(), get(), get())
     }
 }
 
 val firebaseDependencies = applicationContext {
     bean {
-        DefaultFirebaseAppRepository(get() as Context) as FirebaseAppRepository
+        DefaultFirebaseApp(get() as Context) as InternalFirebaseApp
     }
 
     bean {
-        DefaultFirebaseAuthRepository(get(), get()) as FirebaseAuthRepository
+        DefaultInternalFirebaseAuth(get(), get()) as InternalFirebaseAuth
     }
 }
 
-val fuckYouAppModules = listOf(rxModule, viewModule, firebaseDependencies)
+val fuckYouAppModules = listOf(rxModule, viewModule, firebaseDependencies) + RepositoryComponents.execute()

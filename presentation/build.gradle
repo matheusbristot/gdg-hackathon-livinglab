@@ -62,10 +62,6 @@ dependencies {
     // ViewModel and LiveData
     implementation "android.arch.lifecycle:extensions:$lifecycle_version"
 
-    // Koin
-    implementation "org.koin:koin-android-architecture:$koin_version"
-    implementation "org.koin:koin-android:$koin_version"
-
     // Multidex
     implementation 'com.android.support:multidex:1.0.3'
 
@@ -75,8 +71,7 @@ dependencies {
     // Firebase
     implementation 'com.google.firebase:firebase-core:16.0.3'
     implementation 'com.google.firebase:firebase-crash:16.2.0'
-    implementation 'com.google.firebase:firebase-auth:16.0.3'
-    implementation 'com.google.firebase:firebase-database:16.0.1'
+
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'

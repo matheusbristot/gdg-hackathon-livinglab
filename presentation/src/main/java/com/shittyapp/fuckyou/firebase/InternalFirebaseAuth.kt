@@ -1,8 +1,8 @@
-package com.shittyapp.fuckyou.repository
+package com.shittyapp.fuckyou.firebase
 
 import com.google.firebase.auth.FirebaseAuth
 import io.reactivex.Single
 
-interface FirebaseAuthRepository {
+interface InternalFirebaseAuth {
     fun firebaseAuth(): Single<FirebaseAuth>
 }

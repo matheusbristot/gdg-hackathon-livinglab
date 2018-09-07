@@ -2,6 +2,7 @@ package com.shittyapp.fuckyou
 
 import android.support.multidex.MultiDexApplication
 import com.google.firebase.analytics.FirebaseAnalytics
+import com.shittyapp.data.di.RepositoryComponents
 import com.shittyapp.fuckyou.di.fuckYouAppModules
 import org.koin.android.ext.android.startKoin
 
