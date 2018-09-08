@@ -10,7 +10,7 @@ class QuizAdapter(fragmentManger: FragmentManager): FragmentPagerAdapter(fragmen
     private val quizList: MutableList<Quiz> = mutableListOf()
 
     override fun getItem(position: Int): Fragment {
-        return QuizFragment.getInstance(quizList[position].description)
+        return QuizFragment.getInstance(position, quizList[position].description)
     }
 
     override fun getCount(): Int  = quizList.count()

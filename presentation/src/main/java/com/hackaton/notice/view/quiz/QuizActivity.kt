@@ -25,8 +25,14 @@ class QuizActivity : AppCompatActivity() {
         subscribeUi()
     }
 
-    fun goToNext() {
-        binding.quizViewPager.goToNext()
+    fun goToNext(value: Int) {
+        if (binding.quizViewPager.currentItem < 9) {
+            list.add(value)
+            binding.quizViewPager.goToNext()
+        } else {
+            list.add(value)
+            quizViewModel.calculate(list)
+        }
     }
 
     fun goToPrevious() {
@@ -49,13 +55,11 @@ class QuizActivity : AppCompatActivity() {
     }
 
     fun addAnswer(id: Int) {
-        if(list.size > 0) {
-            if (list.get(binding.quizViewPager.currentItem) >= 0)
-                list.add(binding.quizViewPager.currentItem, id)
-            else
-                list.set(binding.quizViewPager.currentItem, id)
-        }
-        else
+        if (binding.quizViewPager.currentItem < list.size) {
             list.add(binding.quizViewPager.currentItem, id)
+        } else {
+            if (binding.quizViewPager.currentItem == 0) list.add(binding.quizViewPager.currentItem, id)
+            else list.add(binding.quizViewPager.currentItem - 1, id)
+        }
     }
 }

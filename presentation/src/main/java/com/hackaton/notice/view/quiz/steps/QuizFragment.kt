@@ -17,18 +17,22 @@ class QuizFragment : Fragment() {
 
     companion object {
         const val EXTRA_DESCRIPTION = "EXTRA_DESCRIPTION"
+        const val EXTRA_POSITION = "EXTRA_POSITION"
 
-        fun getInstance(description: String): QuizFragment {
+        fun getInstance(position: Int, description: String): QuizFragment {
             val fragment = QuizFragment()
             val bundle = Bundle()
             bundle.putString(EXTRA_DESCRIPTION, description)
+            bundle.putInt(EXTRA_POSITION, position)
             fragment.arguments = bundle
             return fragment
         }
     }
 
+    private var candidate = 0
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_quiz, container, false)
+        initBackground()
         return binding.root
     }
 
@@ -42,19 +46,34 @@ class QuizFragment : Fragment() {
         binding.textView2.text = arguments?.getString(EXTRA_DESCRIPTION)
         binding.containerRadioGroup.setOnCheckedChangeListener { button, _ ->
             binding.next.isEnabled = true
+
             val nameButtonSelected = button.checkedRadioButtonId
             val a = view?.findViewById<RadioButton>(nameButtonSelected)
-            when(a?.text){
-                "Discordo" -> (activity as QuizActivity).addAnswer(10)
-                "Neutro" -> (activity as QuizActivity).addAnswer(0)
-                "Concordo" ->(activity as QuizActivity).addAnswer(20)
+            when (a?.text) {
+                "Discordo" -> candidate = 10
+                "Neutro" -> candidate = 0
+                "Concordo" -> candidate = 20
             }
-
         }
     }
 
     private fun setupClickListeners() {
-        binding.next.setOnClickListener { (activity as QuizActivity).goToNext() }
+        binding.next.setOnClickListener { (activity as QuizActivity).goToNext(candidate) }
         binding.previous.setOnClickListener { (activity as QuizActivity).goToPrevious() }
+    }
+
+    private fun initBackground() {
+        when (arguments?.getInt(EXTRA_POSITION)) {
+            0 -> binding.imageView.setImageDrawable(context?.getDrawable(R.drawable.s1))
+            1 -> binding.imageView.setImageDrawable(context?.getDrawable(R.drawable.s2))
+            2 -> binding.imageView.setImageDrawable(context?.getDrawable(R.drawable.s3))
+            3 -> binding.imageView.setImageDrawable(context?.getDrawable(R.drawable.s4))
+            4 -> binding.imageView.setImageDrawable(context?.getDrawable(R.drawable.s5))
+            5 -> binding.imageView.setImageDrawable(context?.getDrawable(R.drawable.s6))
+            6 -> binding.imageView.setImageDrawable(context?.getDrawable(R.drawable.s7))
+            7 -> binding.imageView.setImageDrawable(context?.getDrawable(R.drawable.s8))
+            8 -> binding.imageView.setImageDrawable(context?.getDrawable(R.drawable.s9))
+            9 -> binding.imageView.setImageDrawable(context?.getDrawable(R.drawable.s10))
+        }
     }
 }

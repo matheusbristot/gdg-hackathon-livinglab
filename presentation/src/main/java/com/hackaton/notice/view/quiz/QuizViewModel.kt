@@ -4,6 +4,7 @@ import android.arch.lifecycle.Lifecycle
 import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.OnLifecycleEvent
+import android.util.Log
 import com.crashlytics.android.Crashlytics
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -42,5 +43,18 @@ class QuizViewModel(
                 })
             }, { Crashlytics.logException(it) })
         }
+    }
+
+    fun calculate(list: List<Int>) {
+        var PF = 0
+        var PE = 0
+        list.forEachIndexed { index, i ->
+            when {
+                index <= 4 -> PF += i
+                index in 5..9 -> PE += i
+            }
+        }
+        Log.e("RESULTADOS", "PF: $PF <::> PE: $PE")
+        if (PF <= 50 && PE <= 50) Log.e("RESULTADOS", "bolsonomindsaijsd")
     }
 }
