@@ -41,5 +41,6 @@ class MainViewModel(
                 })
             }, { Crashlytics.logException(it) })
         }
+
     }
 }
