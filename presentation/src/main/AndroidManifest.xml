@@ -12,7 +12,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.hackaton.notice.view.dashboard.MainActivity">
+
+        <activity
+            android:name=".view.splash.SplashScreenActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashScreenTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,10 +25,25 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name="com.hackaton.notice.view.dashboard.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+
+
+        <activity
+            android:name=".view.login.LoginActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashScreenTheme"></activity>
+
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="62bbfb2242dd06cba0548a6386bd02463a9cfc36" />
-        <meta-data android:name="firebase_crashlytics_collection_enabled" android:value="false" />
+        <meta-data
+            android:name="firebase_crashlytics_collection_enabled"
+            android:value="false" />
 
     </application>
 
