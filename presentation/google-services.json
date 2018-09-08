@@ -46,6 +46,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "483650318380-0kl3jrdpm0ka48odc7v7ggeal295429h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hackaton.notice.debug",
+            "certificate_hash": "f29b51f7939fb7ade470a2fc3291e9f3e3b66e23"
+          }
+        },
+        {
           "client_id": "483650318380-sv6bakne0oqago68utqqk5rcbrl7hh5j.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -60,8 +68,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "483650318380-sv6bakne0oqago68utqqk5rcbrl7hh5j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2
