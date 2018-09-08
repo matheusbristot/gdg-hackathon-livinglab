@@ -2,9 +2,9 @@ package com.hackaton.notice.view.dashboard
 
 import android.support.v7.widget.RecyclerView
 import android.view.ViewGroup
-import com.hackaton.domain.entities.PreferenceQuizz
+import com.hackaton.domain.entities.PreferenceQuiz
 
-class PreferencesAdapter(private val list: List<PreferenceQuizz>) : RecyclerView.Adapter<PreferenceViewHolder>() {
+class PreferencesAdapter(private val list: List<PreferenceQuiz>) : RecyclerView.Adapter<PreferenceViewHolder>() {
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int) = PreferenceViewHolder.inflate(viewGroup)
 
