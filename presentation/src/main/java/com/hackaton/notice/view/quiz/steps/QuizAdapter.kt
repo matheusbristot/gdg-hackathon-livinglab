@@ -15,4 +15,9 @@ class QuizAdapter(fragmentManger: FragmentManager): FragmentPagerAdapter(fragmen
 
     override fun getCount(): Int  = quizList.count()
 
+    fun setData(preferencesQuiz: List<Quiz>) {
+        quizList.addAll(preferencesQuiz)
+        notifyDataSetChanged()
+    }
+
 }

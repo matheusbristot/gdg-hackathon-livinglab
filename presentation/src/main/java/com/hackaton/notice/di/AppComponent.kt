@@ -8,6 +8,7 @@ import com.hackaton.notice.util.FIREBASE_USER
 import com.hackaton.notice.util.rx.DefaultSchedulerProvider
 import com.hackaton.notice.view.dashboard.MainViewModel
 import com.hackaton.notice.view.login.LoginViewModel
+import com.hackaton.notice.view.quiz.QuizViewModel
 import com.hackaton.notice.view.splash.SplashScreenViewModel
 import org.koin.android.architecture.ext.viewModel
 import org.koin.dsl.module.applicationContext
@@ -20,7 +21,7 @@ val viewModule = applicationContext {
     viewModel { params -> MainViewModel(params[FIREBASE_USER], get(), get()) }
     viewModel { SplashScreenViewModel(get()) }
     viewModel { LoginViewModel(get(), get(), get(), get()) }
-//    bean { SigInValidation() }
+    viewModel { QuizViewModel(get(), get()) }
 }
 
 val firebaseDependencies = applicationContext {

@@ -4,9 +4,7 @@ import com.hackaton.data.BuildConfig
 import com.hackaton.data.api.ApiClient
 import com.hackaton.data.api.FuckyouDataSource
 import com.hackaton.data.boundaries.FirebaseReference
-import com.hackaton.data.boundaries.PostRepository
 import com.hackaton.data.repository.DefaultFirebaseReference
-import com.hackaton.data.repository.DefaultPostRepository
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.dsl.module.applicationContext
@@ -51,7 +49,6 @@ class RepositoryComponents {
 
         private fun getRepositoryDependencies() = applicationContext {
             bean { ApiClient(get()) }
-            bean { DefaultPostRepository(get()) as PostRepository}
             bean { DefaultFirebaseReference() as FirebaseReference }
         }
 

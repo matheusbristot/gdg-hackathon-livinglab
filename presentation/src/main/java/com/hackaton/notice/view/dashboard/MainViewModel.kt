@@ -26,21 +26,6 @@ class MainViewModel(
 
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
     fun onCreate() {
-        launch {
-            databaseReference.getQuizzReference().with(schedulerProvider).subscribe({
-                it.addValueEventListener(object : ValueEventListener {
-                    override fun onDataChange(dataSnapshot: DataSnapshot) {
-                        val mutableList = mutableListOf<PreferenceQuiz>()
-                        dataSnapshot.children.forEach { mutableList.add(PreferenceQuiz(it.child("id").value.toString(), it.child("description").value.toString())) }
-                        preferencesLiveData.value = mutableList.toList()
-                    }
-
-                    override fun onCancelled(dataBaseError: DatabaseError) {
-                        Crashlytics.logException(dataBaseError.toException().cause)
-                    }
-                })
-            }, { Crashlytics.logException(it) })
-        }
 
     }
 }
