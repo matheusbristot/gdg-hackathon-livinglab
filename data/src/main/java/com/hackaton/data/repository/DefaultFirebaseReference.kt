@@ -7,7 +7,11 @@ import io.reactivex.Single
 
 class DefaultFirebaseReference : FirebaseReference {
 
-    override fun getReference(): Single<DatabaseReference> {
+    override fun getUserReference(): Single<DatabaseReference> {
         return Single.just(FirebaseDatabase.getInstance().getReference("users"))
+    }
+
+    override fun getQuizzReference(): Single<DatabaseReference> {
+        return Single.just(FirebaseDatabase.getInstance().getReference("survey"))
     }
 }

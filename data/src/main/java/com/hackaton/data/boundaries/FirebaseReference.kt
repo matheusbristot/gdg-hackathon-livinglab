@@ -5,5 +5,7 @@ import io.reactivex.Single
 
 interface FirebaseReference {
 
-    fun getReference(): Single<DatabaseReference>
+    fun getUserReference(): Single<DatabaseReference>
+
+    fun getQuizzReference(): Single<DatabaseReference>
 }
