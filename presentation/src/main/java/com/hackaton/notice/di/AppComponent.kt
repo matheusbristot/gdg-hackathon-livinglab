@@ -17,7 +17,7 @@ val rxModule = applicationContext {
 }
 
 val viewModule = applicationContext {
-    viewModel { params -> MainViewModel(params[FIREBASE_USER], get(), get()) }
+    viewModel { params -> MainViewModel(params[FIREBASE_USER], get(), get(), get()) }
     viewModel { SplashScreenViewModel(get()) }
     viewModel { LoginViewModel(get(), get(), get(), get()) }
 //    bean { SigInValidation() }

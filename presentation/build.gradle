@@ -86,6 +86,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-core:16.0.3'
     implementation 'com.google.firebase:firebase-crash:16.2.0'
     implementation 'com.crashlytics.sdk.android:crashlytics:2.9.5'
+    implementation 'com.google.firebase:firebase-database:16.0.1'
 
     // Anko
     implementation "org.jetbrains.anko:anko-commons:$anko_version"
