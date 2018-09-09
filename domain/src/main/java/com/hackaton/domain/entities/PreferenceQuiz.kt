@@ -1,6 +1,6 @@
 package com.hackaton.domain.entities
 
-data class PreferenceQuizz(
+data class PreferenceQuiz(
         val id: String,
         val description: String
 )

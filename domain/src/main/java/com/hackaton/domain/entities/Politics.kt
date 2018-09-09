@@ -1,5 +1,5 @@
 package com.hackaton.domain.entities
 
-class Objects (
+data class Politics(
         val politics: List<Politic>
 )

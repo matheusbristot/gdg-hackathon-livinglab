@@ -1,9 +1,9 @@
 package com.hackaton.domain.entities
 
 data class Politic(
-        val name: String,
-        val picutre: String,
-        val politicalParties: String,
-        val cpf: String,
-        val website: String
+        val id: Int? = null,
+        val name: String? = null,
+        val picutre: String? = null,
+        val cpf: String? = null,
+        val website: String? = null
 )

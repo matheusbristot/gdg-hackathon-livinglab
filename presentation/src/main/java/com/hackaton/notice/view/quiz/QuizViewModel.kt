@@ -10,27 +10,31 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
 import com.hackaton.data.boundaries.FirebaseReference
 import com.hackaton.domain.di.SchedulerProvider
-import com.hackaton.domain.entities.PreferenceQuizz
+import com.hackaton.domain.entities.Quiz
+import com.hackaton.domain.interactors.CalculateQuiz
 import com.hackaton.notice.base.view.BaseViewModel
 import com.hackaton.notice.util.rx.with
 
 class QuizViewModel(
         private val schedulerProvider: SchedulerProvider,
-        private val databaseReference: FirebaseReference
+        private val databaseReference: FirebaseReference,
+        private val calculateQuiz: CalculateQuiz
 ) : BaseViewModel() {
 
-    val quisList: LiveData<List<PreferenceQuizz>> get() = quizListLiveData
+    val quizList: LiveData<List<Quiz>> get() = quizListLiveData
+    val result: LiveData<String> get() = resultLiveData
 
-    private val quizListLiveData: MutableLiveData<List<PreferenceQuizz>> = MutableLiveData()
+    private val quizListLiveData: MutableLiveData<List<Quiz>> = MutableLiveData()
+    private val resultLiveData: MutableLiveData<String> = MutableLiveData()
 
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
-    fun getPreferenceQuizzList() {
+    fun getQuizList() {
         launch {
             databaseReference.getQuizzReference().with(schedulerProvider).subscribe({
                 it.addValueEventListener(object : ValueEventListener {
                     override fun onDataChange(dataSnapshot: DataSnapshot) {
-                        val mutableList = mutableListOf<PreferenceQuizz>()
-                        dataSnapshot.children.forEach { mutableList.add(PreferenceQuizz(it.child("id").value.toString(), it.child("description").value.toString())) }
+                        val mutableList = mutableListOf<Quiz>()
+                        dataSnapshot.children.forEach { mutableList.add(Quiz(it.child("id").value.toString(), it.child("description").value.toString())) }
                         quizListLiveData.value = mutableList.toList()
                     }
 
@@ -40,5 +44,9 @@ class QuizViewModel(
                 })
             }, { Crashlytics.logException(it) })
         }
+    }
+
+    fun calculate(list: List<Int>) {
+        resultLiveData.value = calculateQuiz.execute(list).blockingGet()
     }
 }

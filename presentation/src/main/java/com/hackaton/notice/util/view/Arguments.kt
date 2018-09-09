@@ -7,6 +7,7 @@ import java.io.Serializable
 
 object Arguments {
     const val ARG_USER: String = "ARG_USER"
+    const val ARG_RESULT: String = "ARG_RESULT"
 }
 
 /*

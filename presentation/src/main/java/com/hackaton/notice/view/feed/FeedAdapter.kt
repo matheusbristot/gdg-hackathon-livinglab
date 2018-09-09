@@ -4,7 +4,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.ViewGroup
 import com.hackaton.domain.entities.Politic
 
-class FeedAdapter: RecyclerView.Adapter<FeedViewHolder>() {
+class FeedAdapter(): RecyclerView.Adapter<FeedViewHolder>() {
 
     private var politicians: MutableList<Politic> = mutableListOf()
 

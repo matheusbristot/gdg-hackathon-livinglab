@@ -3,6 +3,8 @@ package com.hackaton.notice.view.feed
 import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.LinearLayoutManager
+import android.widget.LinearLayout
 import com.hackaton.domain.entities.Politic
 import com.hackaton.notice.R
 import com.hackaton.notice.databinding.ActivityFeedBinding
@@ -26,6 +28,7 @@ class FeedActivity: AppCompatActivity() {
 
     private fun setupRecyclerView() {
         adapter = FeedAdapter()
+        binding.politiciansRecyclerView.layoutManager = LinearLayoutManager(this)
         binding.politiciansRecyclerView.adapter = adapter
     }
 

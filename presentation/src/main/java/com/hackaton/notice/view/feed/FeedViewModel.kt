@@ -24,7 +24,7 @@ class FeedViewModel(
         politiciansRepository.getPoliticians()
                 .with(schedulerProvider)
                 .subscribe({
-                    politiciansLiveData.value = it.politics.toMutableList()
+                    politiciansLiveData.value = it.toMutableList()
                 }, {
                     Crashlytics.log(it.message)
                 })
