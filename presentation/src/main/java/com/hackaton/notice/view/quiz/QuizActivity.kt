@@ -7,7 +7,12 @@ import com.hackaton.domain.entities.Quiz
 import com.hackaton.notice.R
 import com.hackaton.notice.databinding.ActivityQuizBinding
 import com.hackaton.notice.util.observe
+import com.hackaton.notice.util.view.Arguments.ARG_RESULT
 import com.hackaton.notice.view.quiz.steps.QuizAdapter
+import com.hackaton.notice.view.result.ResultActivity
+import org.jetbrains.anko.clearTask
+import org.jetbrains.anko.intentFor
+import org.jetbrains.anko.newTask
 import org.koin.android.architecture.ext.viewModel
 
 class QuizActivity : AppCompatActivity() {
@@ -40,7 +45,14 @@ class QuizActivity : AppCompatActivity() {
     }
 
     private fun subscribeUi() {
-        quizViewModel.quisList.observe(this, ::onGetQuizList)
+        quizViewModel.quizList.observe(this, ::onGetQuizList)
+        quizViewModel.result.observe(this, ::onResult)
+    }
+
+    private fun onResult(result: String?) {
+        result?.let {
+            startActivity(intentFor<ResultActivity>(ARG_RESULT to it).newTask().clearTask())
+        }
     }
 
     private fun onGetQuizList(quizList: List<Quiz>?) {
@@ -52,14 +64,5 @@ class QuizActivity : AppCompatActivity() {
     private fun setupViewPager() {
         adapter = QuizAdapter(supportFragmentManager)
         binding.quizViewPager.adapter = adapter
-    }
-
-    fun addAnswer(id: Int) {
-        if (binding.quizViewPager.currentItem < list.size) {
-            list.add(binding.quizViewPager.currentItem, id)
-        } else {
-            if (binding.quizViewPager.currentItem == 0) list.add(binding.quizViewPager.currentItem, id)
-            else list.add(binding.quizViewPager.currentItem - 1, id)
-        }
     }
 }

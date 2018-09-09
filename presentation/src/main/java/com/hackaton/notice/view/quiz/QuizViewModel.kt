@@ -4,7 +4,6 @@ import android.arch.lifecycle.Lifecycle
 import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.OnLifecycleEvent
-import android.util.Log
 import com.crashlytics.android.Crashlytics
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -12,19 +11,21 @@ import com.google.firebase.database.ValueEventListener
 import com.hackaton.data.boundaries.FirebaseReference
 import com.hackaton.domain.di.SchedulerProvider
 import com.hackaton.domain.entities.Quiz
+import com.hackaton.domain.interactors.CalculateQuiz
 import com.hackaton.notice.base.view.BaseViewModel
 import com.hackaton.notice.util.rx.with
 
 class QuizViewModel(
         private val schedulerProvider: SchedulerProvider,
-        private val databaseReference: FirebaseReference
+        private val databaseReference: FirebaseReference,
+        private val calculateQuiz: CalculateQuiz
 ) : BaseViewModel() {
 
-    val quisList: LiveData<List<Quiz>> get() = quizListLiveData
-    val answers: LiveData<MutableList<Int>> get() = answersLiveData
+    val quizList: LiveData<List<Quiz>> get() = quizListLiveData
+    val result: LiveData<String> get() = resultLiveData
 
     private val quizListLiveData: MutableLiveData<List<Quiz>> = MutableLiveData()
-    private val answersLiveData: MutableLiveData<MutableList<Int>> = MutableLiveData()
+    private val resultLiveData: MutableLiveData<String> = MutableLiveData()
 
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
     fun getQuizList() {
@@ -46,15 +47,6 @@ class QuizViewModel(
     }
 
     fun calculate(list: List<Int>) {
-        var PF = 0
-        var PE = 0
-        list.forEachIndexed { index, i ->
-            when {
-                index <= 4 -> PF += i
-                index in 5..9 -> PE += i
-            }
-        }
-        Log.e("RESULTADOS", "PF: $PF <::> PE: $PE")
-        if (PF <= 50 && PE <= 50) Log.e("RESULTADOS", "bolsonomindsaijsd")
+        resultLiveData.value = calculateQuiz.execute(list).blockingGet()
     }
 }
