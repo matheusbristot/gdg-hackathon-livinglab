@@ -4,8 +4,10 @@ import com.hackaton.data.BuildConfig
 import com.hackaton.data.api.ApiClient
 import com.hackaton.data.api.FuckyouDataSource
 import com.hackaton.data.boundaries.FirebaseReference
+import com.hackaton.data.boundaries.PoliticiansRepository
 import com.hackaton.data.boundaries.PostRepository
 import com.hackaton.data.repository.DefaultFirebaseReference
+import com.hackaton.data.repository.DefaultPoliticiansRepository
 import com.hackaton.data.repository.DefaultPostRepository
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -18,7 +20,7 @@ import java.util.concurrent.TimeUnit
 class RepositoryComponents {
     companion object {
         object DatasourceProperties {
-            const val SERVER_URL = "https://jsonplaceholder.typicode.com/"
+            const val SERVER_URL = "http://politicos.olhoneles.org"
         }
 
         inline fun <reified T> createWebService(okHttpClient: OkHttpClient, url: String): T {
@@ -51,8 +53,9 @@ class RepositoryComponents {
 
         private fun getRepositoryDependencies() = applicationContext {
             bean { ApiClient(get()) }
-            bean { DefaultPostRepository(get()) as PostRepository}
+            bean { DefaultPostRepository(get()) as PostRepository }
             bean { DefaultFirebaseReference() as FirebaseReference }
+            bean { DefaultPoliticiansRepository(get()) as PoliticiansRepository }
         }
 
         fun execute() = listOf(getRetrofitDependencies(), getRepositoryDependencies())

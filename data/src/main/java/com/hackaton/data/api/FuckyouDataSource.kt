@@ -1,6 +1,8 @@
 package com.hackaton.data.api
 
+import com.hackaton.data.model.ApiObjects
 import com.hackaton.data.models.ApiPost
+import com.hackaton.data.model.ApiPolitic
 import io.reactivex.Single
 import retrofit2.Response
 import retrofit2.http.GET
@@ -16,4 +18,8 @@ interface FuckyouDataSource {
     @GET("posts")
     @Headers("Content-type: application/json")
     fun getPosts(): Single<Response<List<ApiPost>>>
+
+    @GET("/api/v0/candidacies/")
+    fun getCandidacies(): Single<Response<ApiObjects>>
+
 }

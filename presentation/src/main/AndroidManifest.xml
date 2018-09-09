@@ -32,11 +32,13 @@
             android:windowSoftInputMode="adjustPan" />
 
 
+        <activity android:name=".view.feed.FeedActivity"/>
+
         <activity
             android:name=".view.login.LoginActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait"
-            android:theme="@style/SplashScreenTheme"></activity>
+            android:theme="@style/SplashScreenTheme"/>
 
         <meta-data
             android:name="io.fabric.ApiKey"
