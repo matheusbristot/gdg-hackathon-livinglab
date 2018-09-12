@@ -11,6 +11,7 @@ import com.hackaton.notice.util.observe
 import com.hackaton.notice.util.view.Arguments
 import com.hackaton.notice.util.view.argument
 import com.hackaton.notice.util.view.load
+import com.hackaton.notice.view.feed.FeedActivity
 import org.jetbrains.anko.clearTask
 import org.jetbrains.anko.intentFor
 import org.jetbrains.anko.newTask
@@ -44,7 +45,7 @@ class ResultActivity : AppCompatActivity(), KoinComponent {
     }
 
     private fun goTo(view: View) {
-//        startActivity(intentFor<SUA_ACTIVITY_ROSS>().newTask().clearTask())
+        startActivity(intentFor<FeedActivity>().newTask().clearTask())
     }
 
     private fun onSetTitle(title: Int?) {

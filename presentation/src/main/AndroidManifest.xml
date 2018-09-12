@@ -38,6 +38,10 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".view.feed.FeedActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
         <activity
             android:name=".view.login.LoginActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"

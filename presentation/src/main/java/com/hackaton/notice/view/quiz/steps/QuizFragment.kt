@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.RadioButton
 import com.hackaton.notice.R
 import com.hackaton.notice.databinding.FragmentQuizBinding
+import com.hackaton.notice.util.view.load
 import com.hackaton.notice.view.quiz.QuizActivity
 
 class QuizFragment : Fragment() {
@@ -64,16 +65,16 @@ class QuizFragment : Fragment() {
 
     private fun initBackground() {
         when (arguments?.getInt(EXTRA_POSITION)) {
-            0 -> binding.imageView.setImageDrawable(context?.getDrawable(R.drawable.s1))
-            1 -> binding.imageView.setImageDrawable(context?.getDrawable(R.drawable.s2))
-            2 -> binding.imageView.setImageDrawable(context?.getDrawable(R.drawable.s3))
-            3 -> binding.imageView.setImageDrawable(context?.getDrawable(R.drawable.s4))
-            4 -> binding.imageView.setImageDrawable(context?.getDrawable(R.drawable.s5))
-            5 -> binding.imageView.setImageDrawable(context?.getDrawable(R.drawable.s6))
-            6 -> binding.imageView.setImageDrawable(context?.getDrawable(R.drawable.s7))
-            7 -> binding.imageView.setImageDrawable(context?.getDrawable(R.drawable.s8))
-            8 -> binding.imageView.setImageDrawable(context?.getDrawable(R.drawable.s9))
-            9 -> binding.imageView.setImageDrawable(context?.getDrawable(R.drawable.s10))
+            0 -> binding.imageView.load(R.drawable.s1, R.drawable.s1)
+            1 -> binding.imageView.load(R.drawable.s2, R.drawable.s2)
+            2 -> binding.imageView.load(R.drawable.s3, R.drawable.s3)
+            3 -> binding.imageView.load(R.drawable.s4, R.drawable.s4)
+            4 -> binding.imageView.load(R.drawable.s5, R.drawable.s5)
+            5 -> binding.imageView.load(R.drawable.s6, R.drawable.s6)
+            6 -> binding.imageView.load(R.drawable.s7, R.drawable.s7)
+            7 -> binding.imageView.load(R.drawable.s8, R.drawable.s8)
+            8 -> binding.imageView.load(R.drawable.s9, R.drawable.s9)
+            9 -> binding.imageView.load(R.drawable.s10, R.drawable.s10)
         }
     }
 }

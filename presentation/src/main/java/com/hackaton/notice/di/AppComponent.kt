@@ -9,6 +9,7 @@ import com.hackaton.notice.util.FIREBASE_USER
 import com.hackaton.notice.util.RESULT
 import com.hackaton.notice.util.rx.DefaultSchedulerProvider
 import com.hackaton.notice.view.dashboard.MainViewModel
+import com.hackaton.notice.view.feed.FeedViewModel
 import com.hackaton.notice.view.login.LoginViewModel
 import com.hackaton.notice.view.quiz.QuizViewModel
 import com.hackaton.notice.view.result.ResultViewModel
@@ -29,6 +30,7 @@ val viewModule = applicationContext {
     viewModel { params -> ResultViewModel(params[RESULT]) }
     viewModel { SplashScreenViewModel(get()) }
     viewModel { LoginViewModel(get(), get(), get(), get()) }
+    viewModel { FeedViewModel(get(), get()) }
     viewModel { QuizViewModel(get(), get(), get()) }
 }
 
