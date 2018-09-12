@@ -1,3 +1,3 @@
-# Lado Certo - Hackaton
+# Lado Certo - GDG + Hackathon
 
-Used in Hackaton: Kotlin + MVVM + Clean Arch + Retrofit + Koin + Rx
+Used in Hackathon: Kotlin + MVVM + Clean Arch + Retrofit + Koin + Rx
