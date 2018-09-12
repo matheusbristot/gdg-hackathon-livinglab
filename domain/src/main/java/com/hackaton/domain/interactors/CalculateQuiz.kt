@@ -9,11 +9,17 @@ class CalculateQuiz {
         val pf = resolvePF(list)
         val pe = resolvePE(list)
         return Single.just(when {
-            pf <= 50 && pe <= 50 -> SOCIALISTA
-            (pf in 51..100) && (pe in 0..30) -> ESQUERDA
-            (pf in 70..100) && (pe in 50..100) -> LIBERTARIO
-            (pf in 0..30) && (pe in 50..100) -> DIREITA
+            pf <= 70 && pe <= 70 -> TOTALITARIO
+            pf >= 70 && pe >= 70 -> LIBERTARIO
+            pf >= 50 && pe >= 50 -> DIREITA
+            pf >= 50 && pe <= 50 -> ESQUERDA
             else -> CENTRISTA
+        /*
+
+        pf <= 50 && pe <= 50 -> SOCIALISTA
+        (pf in 51..100) && (pe in 0..30) -> ESQUERDA
+        (pf in 70..100) && (pe in 50..100) -> LIBERTARIO
+        (pf in 0..30) && (pe in 50..100) -> DIREITA*/
         })
     }
 
