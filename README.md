@@ -1,3 +1,3 @@
-# fuckyou-android
+# Lado Certo - Hackaton
 
-This is an aleatory app to apply new technologies that we want to learn.
+Used in Hackaton: Kotlin + MVVM + Clean Arch + Retrofit + Koin + Rx
