@@ -2,4 +2,14 @@
     <string name="global_email">email</string>
     <string name="global_password">password</string>
     <string name="login_label">login</string>
+    <string name="title_left_traditional">Esquerda Tradicional</string>
+    <string name="text_left_traditional">Você preza pela forte atuação do governo em assuntos diversos.\n Se identifica com a luta de classes e defende a organização pelo Estado acima de tudo.</string>
+    <string name="title_left_libert">Esquerda Libertária</string>
+    <string name="text_left_libert">Você preza pela liberdade individual e discorda com a interferência do governo em todos os assuntos possíveis.\nPode defender grupos sociais e militar a favor deles.</string>
+    <string name="title_right_libert">Direita Libertária</string>
+    <string name="text_right_libert">Você defende a liberdade individual acima de tudo.\n Concorda com o liberalismo econômico e social, e não vê o Estado como o melhor agente de gestão pública.</string>
+    <string name="title_right_conserv">Direita Conservadora</string>
+    <string name="text_right_conserv">Você defende os princípios conservadores acima de tudo.\n Não se familiariza com movimentos sociais e pode enxergar o Estado como um bom agente de gestão pública</string>
+    <string name="title_center">Centro</string>
+    <string name="text_center">Você se identifica com opiniões de ambos os lados.\n Não enxerga os extremos como solucionadores para o problema do país. É considerado por muitos como "em cima do muro"</string>
 </resources>

@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.GridLayoutManager
 import com.google.firebase.auth.FirebaseUser
-import com.hackaton.domain.entities.Preference
+import com.hackaton.domain.entities.PreferenceQuiz
 import com.hackaton.notice.R
 import com.hackaton.notice.databinding.ActivityDashboardBinding
 import com.hackaton.notice.util.FIREBASE_USER
@@ -35,15 +35,15 @@ class MainActivity : AppCompatActivity(), KoinComponent {
     }
 
     private fun setupRecyclerView() {
-        adapter = PreferencesAdapter()
-        binding.preferencesRecyclerView.adapter = adapter
-        val gridLayoutManger = GridLayoutManager(this, 3)
-        binding.preferencesRecyclerView.layoutManager = gridLayoutManger
+
     }
 
-    private fun onGetPreferenceList(preferences: List<Preference>?) {
+    private fun onGetPreferenceList(preferences: List<PreferenceQuiz>?) {
         preferences?.let {
-            adapter.setPreferences(it)
+            adapter = PreferencesAdapter(it)
+            binding.preferencesRecyclerView.adapter = adapter
+            val gridLayoutManger = GridLayoutManager(this, 3)
+            binding.preferencesRecyclerView.layoutManager = gridLayoutManger
         }
     }
 

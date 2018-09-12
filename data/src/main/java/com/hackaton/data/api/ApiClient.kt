@@ -1,13 +1,14 @@
 package com.hackaton.data.api
 
-import com.hackaton.data.models.ApiPost
+import com.hackaton.data.model.ApiObjects
 import io.reactivex.Single
 import io.reactivex.SingleTransformer
 import retrofit2.Response
 
 class ApiClient(private val dataSource: FuckyouDataSource) {
-    fun getPosts(id: Int): Single<ApiPost> {
-        return makeRequest(dataSource.getId(id))
+
+    fun getCandidacies(): Single<ApiObjects> {
+        return makeRequest(dataSource.getCandidacies())
     }
 
     private fun <T> unwrap(): SingleTransformer<Response<T>, T> {
